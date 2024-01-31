@@ -1,0 +1,259 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#list::-webkit-scrollbar{
+    width: 10px;
+}
+
+#list::-webkit-scrollbar-track{
+    background: transparent !important;
+}
+
+#list::-webkit-scrollbar-thumb{
+    background: #1db954;
+    border-radius: 4px;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+}
+
+body{
+    min-height: 100vh;
+    display: flex;
+    background: black;
+    color: white;
+    font-family: "poppins";
+    overflow: hidden;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+}
+/* header baş */
+header{
+    display: flex;
+    height: 10vh;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 15px;
+    width: 100%;
+}
+
+#form{
+    display: flex;
+}
+
+header nav{
+    display: flex;
+    gap: 20px;
+}
+
+header nav a{
+    border-radius: 10pc;
+    white-space: nowrap;
+    transition: all 0.3s;
+    padding: 10px 7px;
+}
+
+header nav a:hover{
+    background: rgb(32, 32, 32);
+}
+
+input{
+    outline: none;
+    padding: 3px 10px;
+    font-family: "poppins";
+    border: none;
+    border-bottom-left-radius: 4px;
+    border-top-left-radius: 4px;
+}
+
+button{
+    padding: 3px 10px ;
+    background: #1db954;
+    border: none;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+    cursor: pointer;
+}
+
+button i{
+    color: white;
+}
+
+/* header son */
+aside{
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    padding: 20px 15px;
+}
+aside nav{
+    display: flex;
+    flex-direction: column;
+}
+aside nav a{
+    padding: 20px 10px;
+    display: flex;
+    gap: 5px;
+    border-radius: 10pc;
+    white-space: nowrap;
+    transition: all 0.3s;
+}
+aside nav a:hover{
+    background: rgb(32, 32, 32);
+}
+aside .logo{
+    max-width: 40px;
+    display: none;
+}
+aside .text-logo{
+    max-width: 130px;
+}
+aside img{
+    max-width: 40px;
+    object-fit: contain;
+}
+
+@media(max-width:870px){
+    .text-logo, aside span{
+        display: none;
+    }
+
+    .logo{
+        display: block !important;
+    }
+
+    aside i{
+        font-size: 20px;
+    }
+}
+
+/* kartlar */
+main{
+    width: 100%;
+    
+}
+
+main .songs{
+    background: rgb(42, 42, 42);
+    height: 100%;
+    border-top-left-radius: 4px;
+}
+
+main .songs #title{
+    padding: 20px;
+}
+
+main #list{
+    margin-top: 20px;
+    padding: 0 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    height: 80vh;
+    overflow-y: auto;
+    gap: 20px;
+}
+
+@media(max-width:768px){
+    main #list{
+        justify-content: center;
+        gap: 50px;
+    }
+
+    header nav a{
+        font-size: 14px;
+    }
+}
+
+.card{
+    width: 200px;
+    padding: 15px;
+    background: #181818;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.card:hover .play{
+    opacity: 1;
+    bottom: 20px;
+}
+
+.card figure{
+    position: relative;
+}
+
+.card img{
+    width: 100%;
+    border-radius: 6px;
+    margin-bottom: 10px;
+}
+
+.card .play{
+    position: absolute;
+    background: #1db954;
+    right: 10px;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 23px;
+    bottom: -20px;
+    transition: all 0.3s;
+    opacity: 0;
+}
+
+.card .play:hover{
+    background: #0e9c3f;
+    scale: 0.9;
+}
+
+/* oynatma */
+
+.playing{
+    position: fixed;
+    display: flex;
+    bottom: 0;
+    justify-content: space-between;
+    align-items: center;
+    gap: 50px;
+    z-index: 100;
+    padding: 10px 40px;
+    width: 100%;
+    background-image: linear-gradient(240deg, #fa8bff 0%, #2bd2ff 52%, #2bff88 90%);
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.612);
+}
+
+.playing .info{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.info img{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    animation: spin 3s linear infinite;
+}
+
+@keyframes spin{
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}
+
